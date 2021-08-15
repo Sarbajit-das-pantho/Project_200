@@ -2,8 +2,13 @@
 using namespace std;
 int main()
 {
+    cout << "Enter number of voters: ";
+    int t;
+    cin >> t;
+    while(t--)
+    {
     int partyselect, A = 0, B = 0, C = 0;
-    abc:
+abc:
 
     cout << "\n\n      ###WELCOME###"<<endl;
     cout << "    Press 1 to vote A \n    Press 2 to vote B \n    Press 3 to vote C" << endl;
@@ -35,22 +40,40 @@ int main()
     cin >> ch;
     if(ch == 'R')
     {
-    cout << "\nVotes of A in this polling system = "<< A;
-    cout << "\nVotes of B in this polling system = "<< B;
-    cout << "\nVotes of C in this polling system = "<< C;
+        xyz:
+cout << "\nEnter name of Presiding Officer : ";
+             string usrnm;
+        cin >> usrnm;
+        cout << "\nEnter Password of Presiding Officer :  ";
+              int pass;
+        cin >> pass;
+        if(usrnm == "Admin" && pass == 1234)
+        {
 
-    if(A > B && B >= C)
-        cout << "\nA is winner in this polling system";
+            cout << "\nVotes of A in this polling system = "<< A;
+            cout << "\nVotes of B in this polling system = "<< B;
+            cout << "\nVotes of C in this polling system = "<< C;
 
-    else if(B > C && C >= A)
-        cout << "\nB is winner in this polling system";
+            if(A > B && B >= C)
+                cout << "\nA is winner in this polling system";
 
-    else if(C > A && A >= B)
-        cout << "\nC is winner in this polling system\n";
-    else
-        cout<< "Votes are tied  in this polling system\n";
+            else if(B > C && C >= A)
+                cout << "\nB is winner in this polling system";
+
+            else if(C > A && A >= B)
+                cout << "\nC is winner in this polling system\n";
+            else
+                cout<< "Votes are tied  in this polling system\n";
+                break;
+        }
+        else
+        {
+            cout << "\nWarning!!! Your entered Username or Password is Wrong";
+            goto xyz;
     }
-    else
-        goto abc;
-   return 0;
-}
+    }
+        else
+            goto abc;
+    }
+        return 0;
+    }
